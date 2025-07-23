@@ -1,31 +1,31 @@
 # RPC Scavenger Hunt
 
-These exercises require a synced mainnet full node with the transaction index
-active (`-txindex=1`). To access the public node provided, you must have `bitcoin-cli`
-installed. It is part of the package you can download from [bitcoincore.org](https://bitcoincore.org/bin/bitcoin-core-28.0/).
-These packages obviously include the Bitcoin Core daemon as well, but you do not
-need to run it or sync a mainnet node yourself for this exercise.
+These exercises require a synced mainnet full node with the transaction index active (`-txindex=1`).
+To access the public node provided, you must have `bitcoin-cli` installed.
+It is part of the package you can download from [bitcoincore.org](https://bitcoincore.org/bin/bitcoin-core-29.0/).
 
-## RPC server IP: `217.76.54.77`
-
-Students will be emailed unique username/password pairs.
+These packages obviously include the Bitcoin Core daemon as well, but you do not need to run it or sync a mainnet node yourself for this exercise.
+Students will be emailed unique username/password pairs and a public IP to connect to fully synced Bitcoin node hosted by the University of Brasília for this class.
 
 Usage example:
 
 ```sh
-$ bitcoin-cli -rpcconnect=217.76.54.77 -rpcuser=<user> -rpcpassword=<password> getblockcount
+$ bitcoin-cli -rpcconnect=<node_ip> -rpcuser=<user> -rpcpassword=<password> getblockcount
 823280
 ```
 
 or you can add these lines to your `bitcoin.conf` file:
 
 ```
-rpcconnect=217.76.54.77
+rpcconnect=<node_ip>
 rpcuser=<user>
 rpcpassword=<password>
 ```
 
 ...and then execute `bitcoin-cli getblockcount` without extra options.
+
+Each system expects the `bitcoin.conf` file in a different location.
+See the [Bitcoin Core documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/bitcoin-conf.md) for details.
 
 *HINT*: Use `bitcoin-cli help` and `bitcoin-cli help <command name>` to learn
   what commands are available and what they do.
@@ -33,23 +33,29 @@ rpcpassword=<password>
 
 ## Expected submissions
 
-Every question must be answered by providing a bash script that executes `bitcoin-cli`
-commands. No other commands should be necessary besides bash operators (for loops, if/else logic, etc)
-and `jq`, which is a JSON parsing command you may need to manually install on your system.
+Every question must be answered by providing a bash script that executes `bitcoin-cli` commands.
+No other commands should be necessary besides bash operators (for loops, if/else logic, etc) and `jq`, which is a JSON parsing command you may need to manually install on your system.
 
-Each student will get a private fork of this repository
-when they join the GitHub Classroom assignment. You will commit and push your
-submissions to GitHub which will evaluate the answers automatically. You can
-commit and push as often as you like and GitHub will re-evaluate your code
-every time.
+Each student will get a private fork of this repository when they join the GitHub Classroom assignment.
+You will commit and push your submissions to GitHub which will evaluate the answers automatically.
+You can commit and push as often as you like and GitHub will re-evaluate your code every time.
 
-There are empty template files for each script in the [submission](/submission)
-directory in this repository. You MUST write your scripts into these files for
-the autograder to work properly. Do NOT rename the script files!
+There are empty template files for each script in the [submission](/submission) directory in this repository.
+You MUST write your scripts into these files for the autograder to work properly.
+Do NOT rename the script files!
 
-You can solve the task using any programming language, but you should adapt the scripts in the `submissions` directory to build and call your programs. The autograder will always call, e.g., `bash submission/001.sh` from the root of the repository. The answer should be a single line with the required answer and nothing more. 
+You can solve the task using any programming language, but you should adapt the scripts in the `submissions` directory to build and call your programs.
+The autograder will always call, e.g., `bash submission/001.sh` from the root of the repository.
+The answer should be a single line with the required answer and nothing more.
+Check [Github's documentation](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md) to see what's available on the autograder.
 
-Answer as many as you can. Some are easy, some are very hard!
+Each question will worth one point for a total of eight points.
+Some are easy, some are quite hard!
+Don't expect the lectures to be sufficient to answer all questions, you should do your own research.
+
+Discussions and mutual help among students is encouraged, but do not provide finished answers for your colleagues.
+
+Use this questions and its answers as starting points to ask other questions and learn how Bitcoin works.
 
 ## Scavenger hunt questions
 
